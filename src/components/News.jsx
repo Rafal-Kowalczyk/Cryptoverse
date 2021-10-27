@@ -20,7 +20,7 @@ const News = ({ simplified }) => {
   });
   const { data } = useGetCryptosQuery(100);
 
-  console.log(cryptoNews);
+  // console.log(cryptoNews);
 
   if (!cryptoNews?.value) return "Loading...";
 
@@ -41,15 +41,21 @@ const News = ({ simplified }) => {
             >
               <Option value="Cryptocurrencies">Cryptocurrencies</Option>
               {data?.data?.coins.map((coin) => (
-                <Option value={coin.name}>{coin.name}</Option>
+                <Option value={coin.name} key={coin.id}>
+                  {coin.name}
+                </Option>
               ))}
             </Select>
           </Col>
         )}
 
         {cryptoNews.value.map((news, i) => (
-          <Col xs={24} sm={12} lg={8} key={i}>
-            <Card hoverable className="news-card">
+          <Col xs={24} md={12} lg={8} key={i}>
+            <Card
+              hoverable
+              className="news-card"
+              bodyStyle={{ padding: "15px" }}
+            >
               <a href={news.url} target="_blank" rel="noreferrer">
                 <div className="news-image-container">
                   <Title className="news-title" level={4}>
