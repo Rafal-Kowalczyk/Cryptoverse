@@ -4,6 +4,8 @@ If you want start must generate your api key inRapidApi and use him in env.local
 
 Next use npm install and npm start.
 
+Originator JavaScript Mastery
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
